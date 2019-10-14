@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css">
+      <link rel="stylesheet" type="text/css" href="style.css"/>
+      <link rel="stylesheet" type="text/css" href="stylehover.css/">
+      <script src="https://kit.fontawesome.com/024223af30.js"></script>
+      <script src="jquery-3.4.1.min.js"></script>
+      <link rel="stylesheet" href="PagingStyle.css" />
+      <script src="paging.js"></script>
+      <script src="submit.js"></script>
+      
+      <script type="text/javascript">
+        $(function() {
+          $("#myList").JPaging({
+            pageSize: 5
+          });
+        });
+      </script>
+</head>
+<body>
+  <nav class="navbar navbar-expand-md  bg-dark navbar-dark">
+    <img class="navbar-brand img-fluid" src="me.png"></img>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      <ul class="navbar-nav">
+        <li class="item nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="item nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="item nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>    
+      </ul>
+    </div>  
+  </nav>
+    
+    <div class="row" id="options">
+        <button class="btn-group-lg"><i class="fas fa-home"><b>Accommodation</button></b></i>
+        <button class="btn-group-lg"><i class="far fa-handshake"><b>Roommates</button></b></i>
+        <button class="btn-group-lg"><i class="fas fa-bed"><b>IT/half year accomodation</button></b></i>
+    </div>
+    <div class="container-fluid" id="middle">
+      <span class="container-fluid" id="right">
+        <h2>lodges around Futo</h2>
+        <p>Search for lodges that suit your style and pockets, anywhere and anytime</p>  
+        <input id="myInput" type="text" placeholder="Search..">
+        <br>
+        <div  class="container" id="myList">
+        
+        
+        </div>
+    </span>
+    <span class="container" id="left">
+      <div id="filter">
+          <form class="was-validated" id="form">
+            <div class="form-group">
+              <label for="uname">Name:</label>
+              <input type="text" class="form-control" id="uname" placeholder="Enter name" name="uname" required>
+              <div class="valid-feedback">Valid.</div>
+              <div class="invalid-feedback">Please fill out this field.</div>
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone:</label>
+              <input type="text" class="form-control" id="phone" placeholder="Enter phone" name="phone" onkeypress="myFunction" required>
+              <div class="valid-feedback">Valid.</div>
+              <div class="invalid-feedback">Please fill out this field.</div>
+            </div>
+            <div class="form-group">
+                <label for="level">Level:</label>
+                <input type="text" class="form-control" id="level" placeholder="Enter Level" name="level" required>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Please fill out this field.</div>
+              </div>
+              <div class="form-group">
+                  <label for="location">Location:</label>
+                  <input type="text" class="form-control" id="location" placeholder="Enter location" name="location" required>
+                  <div class="valid-feedback">Valid.</div>
+                  <div class="invalid-feedback">Please fill out this field.</div>
+                </div>
+                <div class="form-group">
+                    <label for="lodge">Lodge Name:</label>
+                    <input type="text" class="form-control" id="lodge" placeholder="Enter lodge" name="lodge" required>
+                    <div class="valid-feedback">Valid.</div>
+                    <div class="invalid-feedback">Please fill out this field.</div>
+                  </div>
+                  <div class="form-group">
+                      <label for="desc">Description:</label>
+                      <textarea class="form-control" rows="5" id="desc"></textarea>
+                    </div>
+                  </div>
+          </form>
+          <div class="form-group form-check">
+              <button type="submit" class="class">Submit</button>
+      </div>
+    </span>
+  </div>
+    
+  <div class="container-fluid" id=mid>
+      <p>
+        Need help? Talk to our friendly team of experts CONTACT US
+        </p>
+    </div>
+    <div class="container-fluid" id="footer">
+
+    </div>
+</body>
+</html>
