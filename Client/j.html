@@ -1,5 +1,5 @@
-﻿<!DOCTYPE html><!--if you are thinking this is a starting tag. it is not. it is just telling the browser b4 hand that you are making use of HTML5 with backwards compactibility accross all html versions-->
-<!--No Html starting Tag. baba just start head like that. when you correct all this typo errors. erase all of my comments.-->
+﻿<!DOCTYPE html>
+<html>
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -63,7 +63,7 @@
         </span>
         <span class="container" id="left">
             <div id="filter">
-                <form class="was-validated" id="form" action="Upload.php">
+                <form class="was-validated" id="form" action="../Server/Upload.php">
                     <div class="form-group">
                         <label for="uname">Name:</label>
                         <input type="text" class="form-control" id="uname" placeholder="Enter name" name="uname" required>
@@ -98,11 +98,14 @@
                         <label for="desc">Description:</label>
                         <textarea class="form-control" rows="5" id="desc"></textarea>
                     </div>
-                    <!--make another form input for file upload(image file upload)-->
+                    <div class="custom-file mb-3">
+      <input type="file" class="custom-file-input" id="customFile" name="filename">
+      <label class="custom-file-label" for="customFile">Choose file</label>
+    </div>
+                    </form>
             </div>
-            </form><!--Kai I wonder how you make this cheap but expensive mistakes, the </form> is supposed to be a child of the </div> above </form> should come b4 div correct it-->
             <div class="form-group form-check">
-                <button type="submit" class="class">Submit</button><!--it would be better to create a default submit input here and stop making things so complicated by stucking every thing into a div-->
+                <button type="submit" class="class">Upload</button>
             </div>
         </span>
     </div>
@@ -117,4 +120,4 @@
     </div>
 
 </body>
-</html><!--Bro Correct this. you did not start with a Html tag, I am not correcting it for you-->
+</html>

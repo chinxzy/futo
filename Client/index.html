@@ -1,12 +1,13 @@
 ﻿<!DOCTYPE html>
-<!--No Html starting Tag. baba just start head like that. when you correct all this typo errors. erase all of my comments.-->
+<html>
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="jquery-3.4.1.min.js"></script>
     <script src="main.js"></script>
-
+    <!--This is where all the errors are probably comming from. it cant locate all of this.-->
+    <!--And i have told you to use bootstrap from CDN.......You are the one delaying now... Do fast let me integrate the server with client so they can be in sync-->
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css">
@@ -179,7 +180,7 @@
                                                               }
                                                         };
 
-               xmlhttp.open("POST", "Upload.php", true);
+               xmlhttp.open("POST", "../Server/Download.php", true);
                xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
                xmlhttp.send("x=" + dbParam);
           return true;
@@ -187,4 +188,4 @@
     </script>
 
 </body>
-</html><!--Bro Correct this. you did not start with a Html tag, I am not correcting it for you-->
+</html>
