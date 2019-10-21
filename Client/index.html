@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="jquery-3.4.1.min.js"></script>
     <script src="main.js"></script>
-
+    <!--i have told you to use bootstrap from CDN.......You are the one delaying now... Do fast let me integrate the server with client so they can be in sync-->
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css">
@@ -179,7 +179,7 @@
                                                               }
                                                         };
 
-               xmlhttp.open("POST", "Upload.php", true);
+               xmlhttp.open("POST", "../Server/Download.php", true);
                xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
                xmlhttp.send("x=" + dbParam);
           return true;

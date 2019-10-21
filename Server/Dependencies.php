@@ -1,5 +1,4 @@
 <?php
-  
   $dbhost  = 'localhost';  
   $dbname  = 'Futo';   
   $dbuser  = 'root';   
