@@ -162,30 +162,6 @@
 
     </div>
 
-    <!--java script codes, for data request from server...-->
-    <script>
-        function call(){
-        var obj, dbParam, xmlhttp;
-        obj = {
-                "maxnum": document.getElementsByName("text")[0].value,
-              };
-
-           dbParam = JSON.stringify(obj);
-           xmlhttp = new XMLHttpRequest();
-
-               xmlhttp.onreadystatechange = function() {
-                                                          if (this.readyState == 4 && this.status == 200)
-                                                             {
-
-                                                              }
-                                                        };
-
-               xmlhttp.open("POST", "../Server/Download.php", true);
-               xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-               xmlhttp.send("x=" + dbParam);
-          return true;
-    }
-    </script>
-
+   
 </body>
 </html>

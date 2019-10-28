@@ -19,7 +19,7 @@
 
      if($imageFileType != "jpg" && $imageFileType != "png" && 
          $imageFileType != "jpeg" && $imageFileType != "gif" ){
-     echo json_encode("Sorry, only JPG, JPEG, PNG & GIF files are allowed");
+         header("Location: ErrorPage/j_Img.html");//echo json_encode("Sorry, only JPG, JPEG, PNG & GIF files are allowed");
      return;}
 
     else {
@@ -27,15 +27,15 @@
 	}
 
     if (!preg_match("/^[0-9]*$/",$Level)) {
-       echo json_encode("Only Values are allowed in your Level details input field, e.g 100, 200,...500");
+               header("Location: ErrorPage/j_Level.html"); // echo json_encode("Only Values are allowed in your Level details input field, e.g 100, 200,...500");
 	   return; }
 
     elseif (!preg_match("/^[0-9]*$/",$Phone)){
-		    echo json_encode("Only Values are allowed in your Phone details input field, e.g 08022222222");
+		    header("Location: ErrorPage/j_Phone.html"); //echo json_encode("Only Values are allowed in your Phone details input field, e.g 08022222222");
 			return;}
 
 	elseif (!preg_match("/^[a-zA-Z0-9]*$/",$Name)) {
-	         echo json_encode("Only Numbers and Values are allowed for your Username field, no special characters are required");
+	         header("Location: ErrorPage/j_Name.html"); //echo json_encode("Only Numbers and Values are allowed for your Username field, no special characters are required");
 			 return;}
 
     else{
@@ -43,5 +43,5 @@
 		$Sql = "INSERT INTO Data (Name, Phone, Level, LodgeName, Location, Description, Image) 
         VALUES ('$Name' ,'$Phone','$Level', '$Location', '$LodgeName', '$Description', '$Image')";
 	    $Connection->query($Sql);
-		header("Location: ../Client/index.html");}
+		header("Location: ../Client/j.html");}
 ?>

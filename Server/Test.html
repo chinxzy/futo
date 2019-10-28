@@ -1,7 +1,16 @@
 <!DOCTYPE html>
 <html>
-<body>
+<body onload="call();">
     <!--For testing, the upload. since you still need to fix bugs from your side. i am using this for a mini test-->
+    
+     <div id="Demo">
+        <span class="Info"><img class="myImg" src="" width="100" height="100" /></span>
+        <div class="Info"><img class="myImg" src="" width="100" height="100" /></div>
+        <div class="Info"><img class="myImg" src="" width="100" height="100" /></div>
+        <div class="Info"><img class="myImg" src="" width="100" height="100" /></div>
+        <div class="Info"><img class="myImg" src="" width="100" height="100" /></div>
+    </div>
+
     <form action="Upload.php" method="post" enctype="multipart/form-data">
         <h5>Username:</h5><input type="text" name="uname" /><br />
         <h5>Phone:</h5><input type="text" name="phone" /><br />
@@ -10,9 +19,57 @@
         <h5>lodgename:</h5><input type="text" name="lodge" /><br />
         <h5>description:</h5><input type="text" name="description" /><br />
         Select image to upload:
-        <input type="file" name="filename" id="filename">
+        <input type="file" name="filename" id="hhhh">
         <input type="submit" value="Upload Image" name="submit">
     </form>
 
+    <script>
+        var z=0;
+        function call(){
+        var obj, dbParam, xmlhttp;
+
+        obj = {
+        "Count": z
+        };
+
+        var info = new Array();
+        info = Array("Name","Phone","Level","LodgeName","Location","Description","Image");
+        
+        z+=10;
+        dbParam = JSON.stringify(obj);//here, the object array is beign converted to a json object so when passed to php Server, it can easily decode it.
+        xmlhttp = new XMLHttpRequest(); //creating an ajax request object here....
+
+        xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200)
+        {
+        myObj = JSON.parse(this.responseText); 
+
+        
+        var x =0;
+        for (var i = 1; i <= 5;++i)
+        {
+
+          for(var z=0; z<7; ++z)
+          {
+            if(z===6)
+            document.getElementsByClassName("myImg")[x].src= "Uploads/" + myObj[i][info[z]];
+             
+            else
+              document.getElementsByClassName("Info")[x].innerHTML += '<div>'+info[z]+': '+myObj[i][info[z]]+'</div>';
+          }  
+          
+           x++;
+        }
+        
+
+        }
+        };
+
+        xmlhttp.open("POST", "Download.php", true);//passing using post method take note of this..... (dont use Get method.)
+        xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xmlhttp.send("x=" + dbParam); //passing d database parameter object to the server for processing.
+
+        }
+    </script>
 </body>
 </html>
