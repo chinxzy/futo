@@ -13,7 +13,7 @@
  #How the Data would be stored in MySql database...
   CreateTable('Data',
               ' Name VARCHAR(10),
-			    Phone INT,
+			    Phone VARCHAR(20),
 				Level INT(3),
 				LodgeName VARCHAR(255),
 				Location VARCHAR(255),
