@@ -135,8 +135,11 @@
         </span>
 
         <div class="container" id="left">
+            <div style="color:red;text-align:center;font-size:medium">
+                Only Numbers and Values are allowed for your Username field, no special characters are required, including spaces inbetween your username
+            </div>
             <div id="filter">
-                <form class="was-validated" id="form" action="../Server/Upload.php" method="post" enctype="multipart/form-data">
+                <form class="was-validated" id="form" action="../Upload.php" method="post" enctype="multipart/form-data">
                     <div class="form-group">
                         <label for="uname">Name:</label>
                         <input type="text" class="form-control" id="uname" placeholder="Enter name" name="uname" required>
@@ -257,7 +260,7 @@
                   {
                     if(z===6)
                     {
-                      document.getElementsByClassName("myImg")[x].src= "../Server/Uploads/" + myObj[i][info[z]];
+                      document.getElementsByClassName("myImg")[x].src= "../Uploads/" + myObj[i][info[z]];
                       document.getElementsByClassName("myImg")[x].style.display= "block";
                     }
                      else
@@ -267,7 +270,7 @@
               }
             }};
 
-            xmlhttp.open("POST", "../Server/Download.php", true);//passing using post method take note of this..... (dont use Get method.)
+            xmlhttp.open("POST", "../Download.php", true);//passing using post method take note of this..... (dont use Get method.)
             xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
             xmlhttp.send("x=" + dbParam); //passing d database parameter object to the server for processing.
 
